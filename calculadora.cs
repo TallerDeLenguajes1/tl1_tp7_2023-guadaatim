@@ -20,10 +20,10 @@ public class Calculadora{
         valor *= multiplicador;
     }
 
-    public void Dividir(double dividendo){
-        if (dividendo != 0)
+    public void Dividir(double divisor){
+        if (divisor != 0)
         {
-            valor /= dividendo;
+            valor /= divisor;
         }
     }
 
