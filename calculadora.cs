@@ -21,7 +21,10 @@ public class Calculadora{
     }
 
     public void Dividir(double dividendo){
-        valor /= dividendo;
+        if (dividendo != 0)
+        {
+            valor /= dividendo;
+        }
     }
 
     public void Limpiar(){
