@@ -1,5 +1,14 @@
 namespace Empleados;
 
+public enum Cargos{
+
+    Auxiliar,
+    Administrativo,
+    Ingeniero,
+    Especialista,
+    Investigador,
+}
+
 public class Empleado{
 
     //atributos
@@ -19,9 +28,7 @@ public class Empleado{
     public DateTime Fechaingreso { get => fechaingreso; set => fechaingreso = value; }
     public double Sueldobasico { get => sueldobasico; set => sueldobasico = value; }
     public char Genero { get => genero; set => genero = value; }
-
-    //internal Cargos Cargo { get => cargo; set => cargo = value; }
-    //metodos
+    public Cargos Cargo { get => cargo; set => cargo = value; }
 
     public int edad;
     public int antiguedad;
@@ -34,18 +41,12 @@ public class Empleado{
     }
 
     public void Jubilacion(char Genero){
-
+        if (Genero == 'm')
+        {
+            
+        }
     }
 
 
 
-}
-
-enum Cargos{
-
-    Auxiliar,
-    Administrativo,
-    Ingeniero,
-    Especialista,
-    Investigador,
 }
