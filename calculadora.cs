@@ -8,9 +8,28 @@ public class Calculadora{
         valor = 0;
     }
 
-    public double Resultado { get => valor; }
-
     public void Suma(double sumando){
         valor += sumando;
     }
+
+    public void Restar(double restando){
+        valor -= restando;
+    }
+
+    public void Multipilicar(double multiplicador){
+        valor *= multiplicador;
+    }
+
+    public void Dividir(double dividendo){
+        valor /= dividendo;
+    }
+
+    public void Limpiar(){
+        valor = 0;
+    }
+
+    public double Resultado { get => valor; }
+
+
+
 }
