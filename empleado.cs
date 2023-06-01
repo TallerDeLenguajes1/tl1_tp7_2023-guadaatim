@@ -7,6 +7,7 @@ public class Empleado{
     private string apellido = String.Empty;
     private DateTime fechadenacimiento;
     private char estadocivil;
+    private char genero;
     private DateTime fechaingreso;
     private double sueldobasico;
     private Cargos cargo;
@@ -17,19 +18,24 @@ public class Empleado{
     public char Estadocivil { get => estadocivil; set => estadocivil = value; }
     public DateTime Fechaingreso { get => fechaingreso; set => fechaingreso = value; }
     public double Sueldobasico { get => sueldobasico; set => sueldobasico = value; }
+    public char Genero { get => genero; set => genero = value; }
+
     //internal Cargos Cargo { get => cargo; set => cargo = value; }
     //metodos
 
     public int edad;
     public int antiguedad;
     
-    void Antiguedad(DateTime Fechaingreso){
+    public void Antiguedad(DateTime Fechaingreso){
         antiguedad = DateTime.Now.Year - Fechaingreso.Year;
     }
-    void CalcularEdad(DateTime Fechadenacimiento){
+    public void CalcularEdad(DateTime Fechadenacimiento){
         edad = DateTime.Now.Year - Fechadenacimiento.Year;
     }
 
+    public void Jubilacion(char Genero){
+
+    }
 
 
 
