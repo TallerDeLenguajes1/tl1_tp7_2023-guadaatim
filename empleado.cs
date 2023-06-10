@@ -24,7 +24,7 @@ public class Empleado{
     private int antiguedad;
     private int jubilacion;
     private double adicional;
-    private int salario;
+    private double salario;
 
     public string? Nombre { get => nombre; set => nombre = value; }
     public string? Apellido { get => apellido; set => apellido = value; }
@@ -38,7 +38,7 @@ public class Empleado{
     public int Antiguedad { get => antiguedad; set => antiguedad = value; }
     public int Jubilacion1 { get => jubilacion; set => jubilacion = value; }
     public double Adicional { get => adicional; set => adicional = value; }
-    public int Salario { get => salario; set => salario = value; }
+    public double Salario { get => salario; set => salario = value; }
 
     //metodos
     public void CalcularAntiguedad(DateTime Fechaingreso){
@@ -81,7 +81,7 @@ public class Empleado{
         {
             Adicional += Sueldobasico * 0.75;
         }
-        if (Cargos.Ingeniero || Cargos.Especialista)
+        //if ((Cargos.Ingeniero) || (Cargos.Especialista))
         {
             Adicional += Adicional * 1.5;
         }
