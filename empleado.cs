@@ -44,7 +44,7 @@ public class Empleado{
     public void CalcularAntiguedad(DateTime Fechaingreso){
         Antiguedad = DateTime.Now.Year - Fechaingreso.Year;
     }
-    public void CalcularEdad(DateTime Fechadenacimiento){
+    public void CalcularEdad(){
         Edad = DateTime.Now.Year - Fechadenacimiento.Year;
     }
 
@@ -70,7 +70,7 @@ public class Empleado{
         }
     }
 
-    public void CalcularAdicional(int Antiguedad, Cargos Cargo, char Estadocivil)
+    public void CalcularSalario(int Antiguedad, Cargos Cargo, char Estadocivil)
     {
         Adicional = 0;
 
@@ -81,7 +81,7 @@ public class Empleado{
         {
             Adicional += Sueldobasico * 0.75;
         }
-        //if ((Cargos.Ingeniero) || (Cargos.Especialista))
+        if ((Cargo == Cargos.Ingeniero) || (Cargo == Cargos.Especialista))
         {
             Adicional += Adicional * 1.5;
         }
@@ -89,10 +89,7 @@ public class Empleado{
         {
             Adicional += 15000;
         }
-    }
 
-    public void CalcularSalario(double Sueldobasico, double Adicional)
-    {
         Salario = Sueldobasico + Adicional;
     }
 
