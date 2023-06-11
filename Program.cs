@@ -78,6 +78,7 @@ internal class Program
 
         for (int i = 0; i < 1; i++)
         {
+            Console.WriteLine("------DATOS DEL EMPLEADO-------");
             MostrarEmpleados(empleaditos, i);
             montoTotal += empleaditos[i].Salario;
         }
@@ -99,13 +100,14 @@ internal class Program
                 }
             }
         }
-
+        
+        Console.WriteLine("------DATOS DEL EMPLEADO MAS PROXIMO A JUBILARSE-------");
         MostrarEmpleados(empleaditos, indice);
+    
     }
 
     private static void MostrarEmpleados(Empleado[] empleaditos, int i)
     {
-        Console.WriteLine("------DATOS DEL EMPLEADO-------");
         Console.WriteLine("Nombre: " + empleaditos[i].Nombre);
         Console.WriteLine("Apellido: " + empleaditos[i].Apellido);
         Console.WriteLine("Fecha de nacimiento: " + empleaditos[i].Fechadenacimiento.Date);
@@ -120,5 +122,6 @@ internal class Program
         Console.WriteLine("Genero: " + empleaditos[i].Genero);
         Console.WriteLine("Cargo: " + empleaditos[i].Cargo);
         Console.WriteLine("Sueldo Basico: " + empleaditos[i].Sueldobasico);
+        Console.WriteLine("Salario: " +empleaditos[i].Salario);
     }
 }
