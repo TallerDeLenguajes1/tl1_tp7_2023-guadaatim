@@ -82,7 +82,25 @@ internal class Program
             montoTotal += empleaditos[i].Salario;
         }
 
-        
+        int indice = 0;
+        int x = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (x == 0)
+            {
+                indice = i;
+            }
+            else
+            {
+                if (empleaditos[indice].Jubilacion1 < empleaditos[i].Jubilacion1)
+                {
+                    indice = i;
+                }
+            }
+        }
+
+        MostrarEmpleados(empleaditos, indice);
     }
 
     private static void MostrarEmpleados(Empleado[] empleaditos, int i)
