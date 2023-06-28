@@ -20,11 +20,7 @@ public class Empleado{
     private DateTime fechaingreso;
     private double sueldobasico;
     private Cargos cargo;
-    private int edad;
-    private int antiguedad;
-    private int jubilacion;
     private double adicional;
-    private double salario;
 
     public string? Nombre { get => nombre; set => nombre = value; }
     public string? Apellido { get => apellido; set => apellido = value; }
@@ -34,64 +30,66 @@ public class Empleado{
     public double Sueldobasico { get => sueldobasico; set => sueldobasico = value; }
     public char Genero { get => genero; set => genero = value; }
     public Cargos Cargo { get => cargo; set => cargo = value; }
-    public int Edad { get => edad; set => edad = value; }
-    public int Antiguedad { get => antiguedad; set => antiguedad = value; }
-    public int Jubilacion1 { get => jubilacion; set => jubilacion = value; }
-    public double Adicional { get => adicional; set => adicional = value; }
-    public double Salario { get => salario; set => salario = value; }
+
 
     //metodos
-    public void CalcularAntiguedad(DateTime Fechaingreso){
-        Antiguedad = DateTime.Now.Year - Fechaingreso.Year;
+    public int CalcularAntiguedad(){
+        
+        int antiguedad = DateTime.Now.Year - Fechaingreso.Year;
+        return antiguedad;
     }
-    public void CalcularEdad(){
-        Edad = DateTime.Now.Year - Fechadenacimiento.Year;
+    public int CalcularEdad(){
+        int edad = DateTime.Now.Year - Fechadenacimiento.Year;
+        return edad;
     }
 
-    public void Jubilacion(char Genero){
+    public int Jubilacion(){
+        int edad = CalcularEdad();
+
         if (Genero == 'm' || Genero == 'M')
         {
-            if (Edad < 60)
+            if (edad < 60)
             {
-                Jubilacion1 = 60 - Edad;
+                return 60 - edad;
             } else
             {
-                Jubilacion1 = 0;
+                return 0;
             }
         } else
         {
-            if (Edad < 65)
+            if (edad < 65)
             {
-                Jubilacion1 = 65 - Edad;
+                return 65 - edad;
             } else
             {
-                Jubilacion1 = 0;
+                return 0;
             }
         }
     }
 
-    public void CalcularSalario(int Antiguedad, Cargos Cargo, char Estadocivil)
+    public double CalcularSalario()
     {
-        Adicional = 0;
+        int adicional = 0;
+        int antiguedad = CalcularAntiguedad();
 
-        if (Antiguedad <= 20)
+
+        if (antiguedad <= 20)
         {
-            Adicional += Sueldobasico * (Antiguedad / 100);
+            adicional += Sueldobasico * (antiguedad / 100);
         } else
         {
-            Adicional += Sueldobasico * 0.75;
+            adicional += Sueldobasico * 0.75;
         }
         if ((Cargo == Cargos.Ingeniero) || (Cargo == Cargos.Especialista))
         {
-            Adicional += Adicional * 1.5;
+            adicional += Adicional * 1.5;
         }
         if (Estadocivil == 'C' || Estadocivil == 'c')
         {
-            Adicional += 15000;
+            adicional += 15000;
         }
 
-        Salario = Sueldobasico + Adicional;
+        return Sueldobasico + Adicional;
     }
-
 
 }
