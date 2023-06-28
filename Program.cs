@@ -18,7 +18,8 @@ internal class Program
         string? cargostr;
         int cargox;
 
-        for (int i = 0; i < 3; i++)
+        //cargar datos
+        for (int i = 0; i < 2; i++)
         {
             empleaditos[i] = new Empleado();
             Console.WriteLine("Ingrese el nombre de empleado: ");
@@ -74,6 +75,7 @@ internal class Program
 
         }
 
+        //calcular monto total
         double montoTotal = 0;
 
         for (int i = 0; i < 1; i++)
@@ -86,6 +88,7 @@ internal class Program
         int indice = 0;
         int x = 0;
 
+        //empleado proximo a jubilarse
         for (int i = 0; i < 3; i++)
         {
             if (x == 0)
@@ -94,7 +97,7 @@ internal class Program
             }
             else
             {
-                if (empleaditos[indice].Jubilacion1 < empleaditos[i].Jubilacion1)
+                if (empleaditos[indice].Jubilacion() < empleaditos[i].Jubilacion())
                 {
                     indice = i;
                 }
@@ -111,7 +114,7 @@ internal class Program
         Console.WriteLine("Nombre: " + empleaditos[i].Nombre);
         Console.WriteLine("Apellido: " + empleaditos[i].Apellido);
         Console.WriteLine("Fecha de nacimiento: " + empleaditos[i].Fechadenacimiento.Date);
-        Console.WriteLine("Edad: " + empleaditos[i].Edad);
+        Console.WriteLine("Edad: " + empleaditos[i].CalcularEdad());
         if (empleaditos[i].Estadocivil == 'S')
         {
             Console.WriteLine("Estado civil: Soltero");
@@ -122,6 +125,6 @@ internal class Program
         Console.WriteLine("Genero: " + empleaditos[i].Genero);
         Console.WriteLine("Cargo: " + empleaditos[i].Cargo);
         Console.WriteLine("Sueldo Basico: " + empleaditos[i].Sueldobasico);
-        Console.WriteLine("Salario: " +empleaditos[i].Salario);
+        Console.WriteLine("Salario: " +empleaditos[i].CalcularSalario());
     }
 }
