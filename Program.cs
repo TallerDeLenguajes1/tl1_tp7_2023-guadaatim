@@ -19,7 +19,7 @@ internal class Program
         int cargox;
 
         //cargar datos
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             empleaditos[i] = new Empleado();
             Console.WriteLine("Ingrese el nombre de empleado: ");
@@ -78,7 +78,7 @@ internal class Program
         //calcular monto total
         double montoTotal = 0;
 
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 3; i++)
         {
             Console.WriteLine("------DATOS DEL EMPLEADO-------");
             MostrarEmpleados(empleaditos, i);
@@ -94,10 +94,11 @@ internal class Program
             if (x == 0)
             {
                 indice = i;
+                x++;
             }
             else
             {
-                if (empleaditos[indice].Jubilacion() < empleaditos[i].Jubilacion())
+                if (empleaditos[indice].Jubilacion() > empleaditos[i].Jubilacion())
                 {
                     indice = i;
                 }

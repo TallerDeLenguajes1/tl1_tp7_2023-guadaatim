@@ -20,7 +20,6 @@ public class Empleado{
     private DateTime fechaingreso;
     private double sueldobasico;
     private Cargos cargo;
-    private double adicional;
 
     public string? Nombre { get => nombre; set => nombre = value; }
     public string? Apellido { get => apellido; set => apellido = value; }
@@ -44,27 +43,25 @@ public class Empleado{
     }
 
     public int Jubilacion(){
+
         int edad = CalcularEdad();
+        int jubilacion1 = 0;
 
         if (Genero == 'm' || Genero == 'M')
         {
             if (edad < 60)
             {
-                return 60 - edad;
-            } else
-            {
-                return 0;
+                jubilacion1 = 60 - edad;
             }
         } else
         {
             if (edad < 65)
             {
-                return 65 - edad;
-            } else
-            {
-                return 0;
+                jubilacion1 = 65 - edad;
             }
         }
+
+        return jubilacion1;
     }
 
     public double CalcularSalario()
@@ -72,13 +69,12 @@ public class Empleado{
         double adicional = 0;
         int antiguedad = CalcularAntiguedad();
 
-
         if (antiguedad <= 20)
         {
             adicional += Sueldobasico * (antiguedad / 100);
         } else
         {
-            adicional += Sueldobasico * 0.75;
+            adicional += Sueldobasico * 0.25;
         }
         if ((Cargo == Cargos.Ingeniero) || (Cargo == Cargos.Especialista))
         {
