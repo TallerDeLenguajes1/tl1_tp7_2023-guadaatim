@@ -82,7 +82,7 @@ internal class Program
         {
             Console.WriteLine("------DATOS DEL EMPLEADO-------");
             MostrarEmpleados(empleaditos, i);
-            montoTotal += empleaditos[i].Salario;
+            montoTotal += empleaditos[i].CalcularSalario();
         }
 
         int indice = 0;
