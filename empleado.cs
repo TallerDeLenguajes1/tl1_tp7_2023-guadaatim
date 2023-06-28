@@ -69,7 +69,7 @@ public class Empleado{
 
     public double CalcularSalario()
     {
-        int adicional = 0;
+        double adicional = 0;
         int antiguedad = CalcularAntiguedad();
 
 
@@ -82,14 +82,14 @@ public class Empleado{
         }
         if ((Cargo == Cargos.Ingeniero) || (Cargo == Cargos.Especialista))
         {
-            adicional += Adicional * 1.5;
+            adicional += adicional * 1.5;
         }
         if (Estadocivil == 'C' || Estadocivil == 'c')
         {
             adicional += 15000;
         }
 
-        return Sueldobasico + Adicional;
+        return Sueldobasico + adicional;
     }
 
 }
