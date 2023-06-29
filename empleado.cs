@@ -89,27 +89,4 @@ public class Empleado{
 
     }
 
-    // public double CalcularSalario(){
-
-    //     double Adicional = 0;
-
-    //     if (this.CalcularAntiguedad() <= 20)
-    //     {
-    //         Adicional += 0.01*this.CalcularAntiguedad()*this.sueldobasico;
-    //     } else
-    //     {
-    //         Adicional += this.sueldobasico * 0.25;
-    //     }
-    //     if ((Cargo == Cargos.Ingeniero) || (Cargo == Cargos.Especialista))
-    //     {
-    //         Adicional += Adicional * 1.5;
-    //     }
-    //     if (Estadocivil == 'C' || Estadocivil == 'c')
-    //     {
-    //         Adicional += 15000;
-    //     }
-
-    //     return Sueldobasico + Adicional;
-
-    // }
 }
