@@ -104,6 +104,8 @@ internal class Program
                 }
             }
         }
+
+        Console.WriteLine("Monto total en salarios: " + montoTotal);
         
         Console.WriteLine("------DATOS DEL EMPLEADO MAS PROXIMO A JUBILARSE-------");
         MostrarEmpleados(empleaditos, indice);
